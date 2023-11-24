@@ -34,7 +34,7 @@
             if($res==true) {
                 print "<script>alert('Editado com sucesso!');</script>";
                 print "<script>location.href='?page=listar';</script>";
-            }else {
+            }else{
                 print "<script>alert('Não foi possível editar!');</script>";
                 print "<script>location.href='?page=listar';</script>";
             }
@@ -43,16 +43,20 @@
 
         case 'excluir':
             if ($_SESSION = $cpf_colab) {
+                print "<script>alert('Não é possivel excluir no momento!');</script>"; 
+            }else{
+                
             $sql = "DELETE FROM colaboradores WHERE cpf_colab='{$_REQUEST["cpf_colab"]}'";
             $res=$mysqli->query($sql);
 
             if($res==true) {
                 print "<script>alert('Excluído com sucesso!');</script>";
                 print "<script>location.href='?page=listar';</script>";
-            }else {
+            }else{
                 print "<script>alert('Não foi possível excluir!');</script>";
                 print "<script>location.href='?page=listar';</script>";
             }
+           
             }
             break;
         }
