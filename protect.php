@@ -5,6 +5,6 @@ if ( !isset($_SESSION)) {
 }
 
 if ( !isset($_SESSION['CPF'])) {
-  header("location: login.php");
-  }
+    die("Você não está logado para acessar essa página.<p><a href=\"login.php\">Entrar</a></p>");
+}
 ?>
