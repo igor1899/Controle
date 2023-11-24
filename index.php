@@ -18,7 +18,7 @@ include('protect.php');
   <body>
 
     Seja bem vindo, <?php echo $_SESSION['Nome'];?>
-    Seja bem vindo2, <?php echo $_SESSION['CPF'];?>
+
     <p>
     <a href="sair.php">Sair</a>
     </P>
