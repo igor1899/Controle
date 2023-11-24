@@ -1,7 +1,5 @@
 <?php
 //Conexão com o Banco de Dados
-include('config.php'); 
-
 if(isset($_POST['CPF'] ) || isset($_POST['Senha'])) {
 
         if(strlen($_POST['CPF']) == 0 ) {
