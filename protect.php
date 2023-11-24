@@ -4,7 +4,7 @@ if ( !isset($_SESSION)) {
   session_start();
 }
 
-if ( !isset($_SESSION['CPF'])) 
-
+if ( !isset($_SESSION['CPF'])) {
+  header("location: login.php");
+  }
 ?>
-<meta http-equiv="refresh" content="0; url=login.php";
