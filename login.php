@@ -8,8 +8,7 @@ if(isset($_POST['CPF'] ) || isset($_POST['Senha'])) {
             echo "Preencha com a sua senha";
         } else {
           //Coleta as informações inseridas e armazena em CPF e Senha:
-            $CPF = $mysqli->real_escape_string($_POST['CPF']);
-            $Senha = $mysqli->real_escape_string($_POST['Senha']);
+        
 
           //SQL que verifica se existe o usuário para fazer Login no sistema:
             $sql_code = "SELECT * FROM colaboradores WHERE cpf_colab = '$CPF' AND senha_colab = '$Senha'" ;
