@@ -42,7 +42,7 @@
             break;
 
         case 'excluir':
-            if ($_SESSION['CPF'] = $cpf_colab) {
+            if ($_REQUEST = $cpf_colab) {
                 print "<script>alert('Não é possivel excluir no momento!');</script>"; 
             }else{
                 
