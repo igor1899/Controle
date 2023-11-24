@@ -42,8 +42,8 @@
             break;
 
         case 'excluir':
-            if ($_REQUEST = $cpf_colab) {
-                print "<script>alert('Não é possivel excluir no momento!');</script>"; 
+            if ($_REQUEST["cpf_colab"]) {
+            print "<script>alert('Não é possivel excluir no momento!');</script>"; 
             }else{
                 
             $sql = "DELETE FROM colaboradores WHERE cpf_colab='{$_REQUEST["cpf_colab"]}'";
