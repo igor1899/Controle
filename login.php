@@ -1,10 +1,10 @@
 <?php
 //Conexão com o Banco de Dados
-if(isset($_POST['CPF'] ) || isset($_POST['Senha'])) {
+if(isset($_POST['cpf_colab'] ) || isset($_POST['senha_colab'])) {
 
-        if(strlen($_POST['CPF']) == 0 ) {
+        if(strlen($_POST['cpf_colab']) == 0 ) {
             echo "Preencha com o seu CPF";
-        } else if(strlen($_POST['Senha']) == 0 ) {
+        } else if(strlen($_POST['senha_colab']) == 0 ) {
             echo "Preencha com a sua senha";
         } else {
           //Coleta as informações inseridas e armazena em CPF e Senha:
