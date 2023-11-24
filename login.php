@@ -1,14 +1,17 @@
 <?php
 //Conexão com o Banco de Dados
-if(isset($_POST['cpf_colab'] ) || isset($_POST['senha_colab'])) {
+include('config.php'); 
 
-        if(strlen($_POST['cpf_colab']) == 0 ) {
+if(isset($_POST['CPF'] ) || isset($_POST['Senha'])) {
+
+        if(strlen($_POST['CPF']) == 0 ) {
             echo "Preencha com o seu CPF";
-        } else if(strlen($_POST['senha_colab']) == 0 ) {
+        } else if(strlen($_POST['Senha']) == 0 ) {
             echo "Preencha com a sua senha";
         } else {
           //Coleta as informações inseridas e armazena em CPF e Senha:
-        
+            $CPF = $mysqli->real_escape_string($_POST['CPF']);
+            $Senha = $mysqli->real_escape_string($_POST['Senha']);
 
           //SQL que verifica se existe o usuário para fazer Login no sistema:
             $sql_code = "SELECT * FROM colaboradores WHERE cpf_colab = '$CPF' AND senha_colab = '$Senha'" ;
@@ -20,8 +23,8 @@ if(isset($_POST['cpf_colab'] ) || isset($_POST['senha_colab'])) {
                 if(!isset($_SESSION)) {
                     session_start();
                 }
-                $_SESSION['cpf_colab'] = $colaboradores['cpf_colab'];
-                $_SESSION['nome_colab'] = $colaboradores['nome_colab'];
+                $_SESSION['CPF'] = $colaboradores['cpf_colab'];
+                $_SESSION['Nome'] = $colaboradores['nome_colab'];
 
                 header("location: index.php");
 
