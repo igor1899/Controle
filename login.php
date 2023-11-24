@@ -20,8 +20,8 @@ if(isset($_POST['cpf_colab'] ) || isset($_POST['senha_colab'])) {
                 if(!isset($_SESSION)) {
                     session_start();
                 }
-                $_SESSION['CPF'] = $colaboradores['cpf_colab'];
-                $_SESSION['Nome'] = $colaboradores['nome_colab'];
+                $_SESSION['cpf_colab'] = $colaboradores['cpf_colab'];
+                $_SESSION['nome_colab'] = $colaboradores['nome_colab'];
 
                 header("location: index.php");
 
