@@ -42,6 +42,7 @@
             break;
 
         case 'excluir':
+            if ($_SESSION = $cpf_colab) {
             $sql = "DELETE FROM colaboradores WHERE cpf_colab='{$_REQUEST["cpf_colab"]}'";
             $res=$mysqli->query($sql);
 
@@ -51,6 +52,7 @@
             }else {
                 print "<script>alert('Não foi possível excluir!');</script>";
                 print "<script>location.href='?page=listar';</script>";
+            }
             }
             break;
         }
