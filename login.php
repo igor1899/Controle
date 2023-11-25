@@ -6,7 +6,9 @@ if(isset($_POST['CPF'] ) || isset($_POST['Senha'])) {
 
         if(strlen($_POST['CPF']) == 0 ) {
             echo "Preencha com o seu CPF";
-        } else if(strlen($_POST['Senha']) == 0 ) {
+        } else 
+        
+        if(strlen($_POST['Senha']) == 0 ) {
             echo "<script>alert('Preencha com a sua senha') </script>";
         } else {
           //Coleta as informações inseridas e armazena em CPF e Senha:
@@ -18,7 +20,7 @@ if(isset($_POST['CPF'] ) || isset($_POST['Senha'])) {
             $sql_query = $mysqli->query($sql_code) or die ("Falha na execução:". $mysqli->error);
             $quant = $sql_query->num_rows;
 
-            if ($quant == 1) {
+        if ($quant == 1) {
                 $colaboradores = $sql_query->fetch_assoc();
                 if(!isset($_SESSION)) {
                     session_start();
@@ -28,9 +30,8 @@ if(isset($_POST['CPF'] ) || isset($_POST['Senha'])) {
 
                 header("location: index.php");
 
-            } else {
+        } else {
                 echo "<script>alert('Falha ao logar! Email e/ou senha incorretos') </script>";
-            }
         }
 }
 ?>
