@@ -11,7 +11,7 @@ include('protect.php');
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <title>Cadastro</title>
   </head>
@@ -25,28 +25,10 @@ include('protect.php');
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-        <div class="conteiner-fluid">
-        <a class="navbar-brand" href="#">Sistema de Almoxarifado</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">    
-          <li class="nav-item active">
-          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-          </li>
-
-          <li class="nav-item">
-          <a class="nav-link" href="?page=novo">Novo usuário</a>
-          </li>
-
-          <li class="nav-item">
-          <a class="nav-link" href="?page=listar">Listar usuários</a>
-          </li>
-      </ul>
-        </div>
-    </nav>
+  <div class="conteiner-fluid">
+        <a class="navbar-brand" href="index.php">Inicio</a>
+        <a class="navbar-brand" href="?page=novo">Novo Usuário</a>
+        <a class="navbar-brand" href="?page=listar">Listar usuários</a>
 
   <div class="container">
     <div class="row">
@@ -63,14 +45,12 @@ include('protect.php');
               case "salvar": include("salvar-usuario.php");
               break;
               default:
-                print "<h1>Bem vindo!</h1>";
+              print "<h1>Bem vindo!</h1>";
             }
-
           ?>
-
       </div>
     </div>
   </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
