@@ -18,7 +18,7 @@
             print "<tr>";
             print "<td>".$row -> cpf_colab."</td>";
             print "<td>".$row -> nome_colab."</td>";
-            print "<td>".$row -> admissao_colab."</td>";
+            print "<td>".date("d/m/Y", strtotime($row->admissao_colab))."</td>";
             print "<td>
                 <button onclick=\"location.href='?page=editar&cpf_colab=".$row->cpf_colab."';\" class= btn-success'>Editar</button>
 
