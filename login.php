@@ -4,10 +4,12 @@ include('config.php');
 
 if(isset($_POST['CPF'] ) || isset($_POST['Senha'])) {
 
-        if(strlen($_POST['CPF']) == 0 && strlen($_POST['Senha']) == 0 ) {
-          echo "<script>alert('Preencha o campo que está em branco') </script>";
-        exit;
+        if(strlen($_POST['CPF']) == 0 ) {
+            echo "Preencha com o seu CPF";
+        } else 
         
+        if(strlen($_POST['Senha']) == 0 ) {
+            echo "<script>alert('Preencha com a sua senha') </script>";
         } else {
           //Coleta as informações inseridas e armazena em CPF e Senha:
             $CPF = $mysqli->real_escape_string($_POST['CPF']);
@@ -30,6 +32,7 @@ if(isset($_POST['CPF'] ) || isset($_POST['Senha'])) {
 
         } else {
                 echo "<script>alert('Falha ao logar! Email e/ou senha incorretos') </script>";
+            }
         }
 }
 ?>
