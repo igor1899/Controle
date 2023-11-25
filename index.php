@@ -66,7 +66,6 @@ include('protect.php');
                 print "<h1>Bem vindo!</h1>";
             }
 
-oi $_REQUEST["cpf_colab"]
           ?>
 
       </div>
