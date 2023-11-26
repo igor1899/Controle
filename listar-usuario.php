@@ -21,8 +21,6 @@
             print "<td>".date("d/m/Y", strtotime($row->admissao_colab))."</td>";
             print "<td>
                 <button onclick=\"location.href='?page=editar&cpf_colab=".$row->cpf_colab."';\" class= btn-success'>Editar</button>
-
-                <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir&cpf_colab=".$row->cpf_colab."';}else{false;}\"class='btn btn-danger'>Excluir</button>
                 </td>";
             print "</tr>";
         }
