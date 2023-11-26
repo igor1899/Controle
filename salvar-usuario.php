@@ -1,7 +1,6 @@
 <?php
-    if (isset($_REQUEST["acao"])) {
+    if (isset($_REQUEST["acao"])) 
     switch ($_REQUEST["acao"]) {
-
         case 'cadastrar':
             $cpf_colab = $_POST["cpf_colab"];
             $nome_colab = $_POST["nome_colab"];
@@ -20,7 +19,7 @@
                 print "<script>location.href='?page=listar';</script>";
             }
             break;
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         case 'editar':
             $nome_colab = $_POST["nome_colab"]; 
             $admissao_colab = $_POST["admissao_colab"];
@@ -33,34 +32,10 @@
 
             $res=$mysqli->query($sql);
             if($res==true) {
-                $_SESSION['Nome'] = $nome_colab;
                 print "<script>alert('Editado com sucesso!');</script>";
                 print "<script>location.href='?page=listar';</script>";
-            }else{
-                print "<script>alert('Não foi possível editar!');</script>";
-                print "<script>location.href='?page=listar';</script>";
-            }
+            }else
 
-            break;
-
-        case 'excluir':
-            if ($_REQUEST["cpf_colab"]) {
-                print "<script>alert('Sessão ativa no momento, não é possivel excluir o acesso.');</script>"; 
-            }else{
-                
-            $sql = "DELETE FROM colaboradores WHERE cpf_colab='{$_REQUEST["cpf_colab"]}'";
-            $res=$mysqli->query($sql);
-
-            if($res==true) {
-                print "<script>alert('Excluído com sucesso!');</script>";
-                print "<script>location.href='?page=listar';</script>";
-            }else{
-                print "<script>alert('Não foi possível excluir!');</script>";
-                print "<script>location.href='?page=listar';</script>";
-            }
-           
-            }
             break;
         }
-    }
 ?>
