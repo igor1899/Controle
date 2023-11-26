@@ -17,7 +17,7 @@ include('protect.php');
   </head>
   <body>
 
-    Seja bem vindo, <?php echo $_SESSION['Nome'];?>
+    Seja bem vindo! <!--  echo $_SESSION['Nome'];-->
 
     <p>
     <a href="sair.php">Sair</a>
