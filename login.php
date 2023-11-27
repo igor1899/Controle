@@ -50,11 +50,11 @@ if(isset($_POST['CPF'] ) || isset($_POST['Senha'])) {
     <form class="login" action="" method="POST" >
         <h2>Login</h2>
         <div class="box-user">
-        <input type="text" name="CPF">
+        <input type="text" maxlength="11" name="CPF">
           <label>CPF</label>
         </div>
         <div class="box-user">
-        <input type="password" name="Senha">
+        <input type="password" maxlength="20" name="Senha">
           <label>Senha</label>
         </div>
         <div>
