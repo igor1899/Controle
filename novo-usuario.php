@@ -3,7 +3,7 @@
     <input type="hidden" name="acao" value="cadastrar">
     <div class="mb-3">
        <label>CPF do colaborador (somente os números)</label>
-       <input type="text" name="cpf_colab" class="form-control">
+       <input type="text" name="cpf_colab" maxlength="11" class="form-control">
     </div>
 
     <div class="mb-3">
