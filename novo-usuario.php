@@ -4,19 +4,21 @@
     
     <div class="mb-3">
     <label>CPF do colaborador (somente os números)</label>
-    <input type="text" name="cpf_colab" maxlength="11" class="form-control" oninput="validateCPFLength(this)">
+    <input type="text" name="cpf_colab" maxlength="11" class="form-control" oninput="extractFirst11Digits(this)">
 </div>
 
 <script>
-    function validateCPFLength(inputField) {
-        var maxLength = parseInt(inputField.getAttribute('maxlength'));
+    function extractFirst11Digits(inputField) {
         var currentValue = inputField.value;
 
-        if (currentValue.length < maxLength) {
-            // O CPF tem menos de 11 caracteres
-            // Aqui você pode adicionar lógica adicional ou uma mensagem de erro, se necessário
-            console.log('CPF incompleto. Insira os 11 dígitos.');
-        }
+        // Remover caracteres não numéricos
+        var numericValue = currentValue.replace(/\D/g, '');
+
+        // Pegar os 11 primeiros dígitos
+        var first11Digits = numericValue.slice(0, 11);
+
+        // Atualizar o valor do campo de entrada
+        inputField.value = first11Digits;
     }
 </script>
 
